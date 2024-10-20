@@ -1,0 +1,27 @@
+{
+  "personalizacion": [
+    "Estado de ánimo: ",
+    "Edad: ",
+    "Género: "
+  ],
+  "filters": [
+    {
+      "name": "¿Cómo estás hoy?",
+      "promptName": "estadoEmocional",
+      "options": ["Feliz", "Triste"],
+      "background": ["/feliz.png", "/triste.png"]
+    },
+    {
+      "name": "Edad:",
+      "promptName": "edad",
+      "options": ["5-6 años", "7-8 años", "9-10 años"],
+      "background": []
+    },
+    {
+      "name": "Género de la historia:",
+      "promptName": "género",
+      "options": ["Aventura", "Misterio", "Fantasía", "Ciencia ficción"],
+      "background": []
+    }
+  ]
+}
