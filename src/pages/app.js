@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Filters from './components/filterSection';
 import GeneratedPrompt from './components/storyGenerated';
 import Head from 'next/head';
-import {sendPrompt} from "./services/conectApi";
+import {sendPrompt} from "@/services/conectApi";
 
 export default function Home() {
     const [generatedPrompt, setGeneratedPrompt] = useState('');

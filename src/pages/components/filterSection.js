@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import Image from "next/image";
-import {createPrompt} from "../services/conectApi";
+import {createPrompt} from "@/services/conectApi";
 
 
 export default function Filters({ onPromptGenerated }) {
