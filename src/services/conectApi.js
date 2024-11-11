@@ -1,6 +1,6 @@
 const Groq = require("groq-sdk");
 
-const groq = new Groq({ apiKey: process.env.API_KEY, dangerouslyAllowBrowser: true });
+const groq = new Groq({ apiKey: "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", dangerouslyAllowBrowser: true });
 
 function createPrompt(selectedValues){
     const json = require(`./prompt.json`);
