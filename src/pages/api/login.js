@@ -1,6 +1,6 @@
 import {createPrompt, sendPrompt} from "../services/conectApi";
 
-export default async function Login(req, res) {
+export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { username, password, estado_animo, edad, genero_literatura } = req.body;
 
