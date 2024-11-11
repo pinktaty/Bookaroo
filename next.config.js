@@ -2,9 +2,7 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-    output: "export",
-    // basePath: "/EpidemiologicLibraryWeb",
-    // assetPrefix: '/EpidemiologicLibraryWeb/',
+    // output: "export",
     images: {
         unoptimized: true,
     },

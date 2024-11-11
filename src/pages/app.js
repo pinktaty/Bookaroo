@@ -1,9 +1,9 @@
 "use client"
 import React, { useState } from 'react';
-import Filters from './filterSection';
-import GeneratedPrompt from './storyGenerated';
+import Filters from './components/filterSection';
+import GeneratedPrompt from './components/storyGenerated';
 import Head from 'next/head';
-import {sendPrompt} from "@/app/conectApi";
+import {sendPrompt} from "./services/conectApi";
 
 export default function Home() {
     const [generatedPrompt, setGeneratedPrompt] = useState('');
@@ -23,7 +23,7 @@ export default function Home() {
         <>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <title>aaaaaaaaaaaa</title>
+                <title>Bookaroo</title>
                 <link rel="preconnect" href="https://fonts.googleapis.com"/>
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
                 <link
@@ -31,8 +31,8 @@ export default function Home() {
                     rel="stylesheet"
                 />
             </Head>
-            <div className="flex flex-row items-start justify-center p-3">
-                <div className="flex-grow-1">
+            <div className="flex sm:flex-row flex-col items-start justify-center p-3">
+                <div className="sm:flex-grow-1 flex flex-col items-center justify-center ">
                     <Filters onPromptGenerated={handlePromptGenerated}/>
                 </div>
                 <div className="flex-1 flex flex-col items-center">

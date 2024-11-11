@@ -1,6 +1,18 @@
 const Groq = require("groq-sdk");
 
-const groq = new Groq({ apiKey: "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", dangerouslyAllowBrowser: true });
+const groq = new Groq({ apiKey: process.env.API_KEY, dangerouslyAllowBrowser: true });
+
+function createPrompt(selectedValues){
+    const json = require(`./prompt.json`);
+    const promptJson = json.prompt;
+    let prompt = "";
+
+    for (let i = 0,  j = 1; i < promptJson.length; i++, j++) {
+        prompt += `${promptJson[i]} ${selectedValues[j] || ''} `;
+    }
+
+    return prompt.trim();
+}
 
 async function sendPrompt(prompt) {
     const chatCompletion = await getGroqChatCompletion(prompt);
@@ -21,4 +33,5 @@ async function getGroqChatCompletion(prompt) {
 
 module.exports = {
     sendPrompt,
+    createPrompt
 };

@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import Image from "next/image";
+import {createPrompt} from "../services/conectApi";
+
 
 export default function Filters({ onPromptGenerated }) {
     const json = require(`./options.json`);
@@ -17,25 +19,13 @@ export default function Filters({ onPromptGenerated }) {
         setSelectedValues(updatedValues);
     };
 
-    const createPrompt = () => {
-        const json = require(`./prompt.json`);
-        const promptJson = json.prompt;
-        let prompt = "";
-
-        for (let i = 1; i < promptJson.length; i++) {
-            prompt += `${promptJson[i]} ${selectedValues[i] || ''} `;
-        }
-
-        return prompt.trim();
-    };
-
     const handleGeneratePrompt = () => {
         for (let i = 0; i < selectedValues.length; i++) {
             if (selectedValues[i] === null) {
                 return;
             }
         }
-        const prompt = createPrompt();
+        const prompt = createPrompt(selectedValues);
         onPromptGenerated(prompt);
     };
 
@@ -72,7 +62,7 @@ export default function Filters({ onPromptGenerated }) {
     }
 
     return (
-        <div className="flex flex-col items-start bg-white rounded-2xl">
+        <div className="flex flex-col bg-white rounded-2xl items-start md:min-h-screen">
             <div className="flex items-start p-3">
                 <Image
                     src="/bookaroo.png"
