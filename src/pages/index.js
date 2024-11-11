@@ -23,7 +23,7 @@ export default function Login() {
                     <label>Usuario</label>
                     <input
                         type="text"
-                        value={text}
+                        value={user}
                         onChange={(e) => setUser(e.target.value)}
                     />
                 </div>
